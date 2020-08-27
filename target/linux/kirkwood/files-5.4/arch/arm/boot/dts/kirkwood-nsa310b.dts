@@ -101,7 +101,6 @@
 		green-hdd {
 			label = "nsa310:green:hdd";
 			gpios = <&gpio1 9 GPIO_ACTIVE_HIGH>;
-			linux,default-trigger = "ata1";
 		};
 
 		red-hdd {
@@ -112,7 +111,6 @@
 		green-esata {
 			label = "nsa310:green:esata";
 			gpios = <&gpio0 12 GPIO_ACTIVE_HIGH>;
-			linux,default-trigger = "ata2";
 		};
 
 		red-esata {
@@ -123,7 +121,6 @@
 		green-usb {
 			label = "nsa310:green:usb";
 			gpios = <&gpio0 15 GPIO_ACTIVE_HIGH>;
-			linux,default-trigger = "usb-host";
 		};
 
 		red-usb {

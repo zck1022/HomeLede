@@ -248,9 +248,7 @@ ifeq ($(DUMP),1)
     .PRECIOUS: $(TMP_CONFIG)
 
     ifdef KERNEL_TESTING_PATCHVER
-      ifneq ($(KERNEL_TESTING_PATCHVER),$(KERNEL_PATCHVER))
-        FEATURES += testing-kernel
-      endif
+      FEATURES += testing-kernel
     endif
     ifneq ($(CONFIG_OF),)
       FEATURES += dt

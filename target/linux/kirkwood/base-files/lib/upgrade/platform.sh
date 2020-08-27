@@ -11,13 +11,12 @@ platform_do_upgrade() {
 	local board="$(board_name)"
 
 	case "$board" in
-	linksys,e4200-v2|\
-	linksys,ea3500|\
-	linksys,ea4500)
-		platform_do_upgrade_linksys "$1"
+	"linksys,audi"|\
+	"linksys,viper")
+		platform_do_upgrade_linksys "$ARGV"
 		;;
 	*)
-		nand_do_upgrade "$1"
+		nand_do_upgrade "$ARGV"
 		;;
 	esac
 }

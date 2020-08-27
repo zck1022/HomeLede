@@ -198,6 +198,7 @@
 			function = "mdio";
 			bias-pull-up;
 		};
+
 		mux_2 {
 			pins = "gpio7";
 			function = "mdc";
@@ -212,6 +213,7 @@
 			drive-strength = <12>;
 			bias-disable;
 		};
+
 		pin_cs {
 			function = "gpio";
 			pins = "gpio12", "gpio59";

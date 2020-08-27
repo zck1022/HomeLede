@@ -260,9 +260,9 @@ package/symlinks-clean:
 	./scripts/feeds uninstall -a
 
 help:
-	cat README.md
+	cat README
 
-distclean: cacheclean
+distclean:
 	rm -rf bin build_dir .config* dl feeds key-build* logs package/feeds package/openwrt-packages staging_dir tmp
 	@$(_SINGLE)$(SUBMAKE) -C scripts/config clean
 

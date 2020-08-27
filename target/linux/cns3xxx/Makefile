@@ -12,7 +12,9 @@ BOARDNAME:=Cavium Networks Econa CNS3xxx
 FEATURES:=squashfs fpu gpio pcie usb usbgadget
 CPU_TYPE:=mpcore
 CPU_SUBTYPE:=vfp
-KERNEL_PATCHVER:=4.19
+MAINTAINER:=Felix Fietkau <nbd@nbd.name>, \
+	    Koen Vandeputte <koen.vandeputte@ncentric.com>
+KERNEL_PATCHVER:=4.14
 
 define Target/Description
 	Build images for Cavium Networks Econa CNS3xxx based boards,
@@ -23,6 +25,6 @@ include $(INCLUDE_DIR)/target.mk
 
 KERNELNAME:=zImage
 
-DEFAULT_PACKAGES += kmod-ath9k kmod-usb2 wpad-basic-wolfssl
+DEFAULT_PACKAGES += kmod-ath9k kmod-usb2 wpad-basic
 
 $(eval $(call BuildTarget))

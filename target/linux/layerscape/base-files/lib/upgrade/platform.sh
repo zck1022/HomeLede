@@ -43,7 +43,7 @@ platform_do_upgrade_sdboot() {
 		return 1
 	}
 
-	if [ "$UPGRADE_OPT_SAVE_PARTITIONS" = "1" ]; then
+	if [ "$SAVE_PARTITIONS" = "1" ]; then
 		# get partitions table from boot device
 		get_partitions "/dev/$diskdev" bootdisk
 
@@ -109,7 +109,7 @@ platform_copy_config() {
 
 	if export_partdevice partdev 1; then
 		mount -t $parttype -o rw,noatime "/dev/$partdev" /mnt
-		cp -af "$UPGRADE_BACKUP" "/mnt/$BACKUP_FILE"
+		cp -af "$CONF_TAR" "/mnt/$CONF_TAR"
 		umount /mnt
 	fi
 }

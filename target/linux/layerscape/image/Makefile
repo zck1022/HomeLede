@@ -46,6 +46,12 @@ define Build/traverse-fit
 	@mv -f $@.new $@
 endef
 
-include $(SUBTARGET).mk
+ifeq ($(SUBTARGET),armv8_64b)
+include armv8_64b.mk
+endif
+
+ifeq ($(SUBTARGET),armv7)
+include armv7.mk
+endif
 
 $(eval $(call BuildImage))
