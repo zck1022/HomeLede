@@ -5,7 +5,7 @@
 [4]: https://github.com/xiaoqingfengATGH/HomeLede/pulls
 [5]: https://img.shields.io/badge/Issues-welcome-brightgreen.svg
 [6]: https://github.com/xiaoqingfengATGH/HomeLede/issues/new
-[7]: https://img.shields.io/badge/release-v2020.07.18-green.svg?
+[7]: https://img.shields.io/badge/release-v2020.09.05-orange.svg?
 [8]: https://github.com/xiaoqingfengATGH/HomeLede/releases
 [10]: https://img.shields.io/badge/Contact-telegram-blue
 [11]: https://t.me/t_homelede
@@ -24,6 +24,7 @@
 对家庭路由高频功能进行了测试（x86软路由），保证可用。
 
 ## 固件内置功能
++ 提供私有软件服务器，实现软件全自动安装
 + 支持UPnP（为BT、EMULE，家用摄像头、XBOX、PS4提供支持）
 + 支持CIFS文件共享协议（路由直接挂载NAS、Samba、Windows文件夹，通过cifs.mount实现，提供图形化挂载工具）
 + 支持自动挂载空闲分区、U盘以及自动向局域网内部共享（通过Samba实现）
