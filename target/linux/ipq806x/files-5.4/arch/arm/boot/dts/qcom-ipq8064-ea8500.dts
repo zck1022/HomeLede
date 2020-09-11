@@ -1,4 +1,6 @@
-#include "qcom-ipq8064-eax500.dtsi"
+#include "qcom-ipq8064-v2.0.dtsi"
+
+#include <dt-bindings/input/input.h>
 
 / {
 	model = "Linksys EA8500 WiFi Router";
@@ -12,10 +14,15 @@
 	aliases {
 		mdio-gpio0 = &mdio0;
 
-		led-boot = &led_power;
-		led-failsafe = &led_power;
-		led-running = &led_power;
-		led-upgrade = &led_power;
+		led-boot = &power;
+		led-failsafe = &power;
+		led-running = &power;
+		led-upgrade = &power;
+	};
+
+	chosen {
+		bootargs = "console=ttyMSM0,115200n8";
+		append-rootblock = "ubi.mtd=";  /* append to bootargs adding the root deviceblock nbr from bootloader */
 	};
 
 	keys {
@@ -32,7 +39,7 @@
 		reset {
 			label = "reset";
 			gpios = <&qcom_pinmux 68 GPIO_ACTIVE_LOW>;
-			linux,code = <KEY_RESTART>;
+			linux,code = <KEY_RESTART >;
 		};
 
 		wps {
@@ -52,7 +59,7 @@
 			gpios = <&qcom_pinmux 53 GPIO_ACTIVE_HIGH>;
 		};
 
-		led_power: power {
+		power: power {
 			label = "ea8500:white:power";
 			gpios = <&qcom_pinmux 6 GPIO_ACTIVE_LOW>;
 			default-state = "keep";
@@ -237,22 +244,60 @@
 };
 
 &mdio0 {
+	status = "okay";
+
+	pinctrl-0 = <&mdio0_pins>;
+	pinctrl-names = "default";
+
+	phy0: ethernet-phy@0 {
+		reg = <0>;
+		qca,ar8327-initvals = <
+			0x00004 0x7600000   /* PAD0_MODE */
+			0x00008 0x1000000   /* PAD5_MODE */
+			0x0000c 0x80        /* PAD6_MODE */
+			0x00010 0x2613a0    /* PWS_REG */
+			0x000e4 0x6a545     /* MAC_POWER_SEL */
+			0x000e0 0xc74164de  /* SGMII_CTRL */
+			0x0007c 0x4e        /* PORT0_STATUS */
+			0x00094 0x4e        /* PORT6_STATUS */
+			>;
+	};
+
 	phy4: ethernet-phy@4 {
 		reg = <4>;
 	};
 };
 
 &gmac1 {
+	status = "okay";
+	phy-mode = "rgmii";
+	qcom,id = <1>;
 	qcom,phy_mdio_addr = <4>;
 	qcom,poll_required = <1>;
 	qcom,rgmii_delay = <0>;
 	qcom,emulation = <0>;
+	pinctrl-0 = <&rgmii2_pins>;
+	pinctrl-names = "default";
+	fixed-link {
+		speed = <1000>;
+		full-duplex;
+	};
 };
-
 /* LAN */
 &gmac2 {
+	status = "okay";
+	phy-mode = "sgmii";
+	qcom,id = <2>;
 	qcom,phy_mdio_addr = <0>;	/* none */
 	qcom,poll_required = <0>;	/* no polling */
 	qcom,rgmii_delay = <0>;
 	qcom,emulation = <0>;
+	fixed-link {
+		speed = <1000>;
+		full-duplex;
+	};
+};
+
+&adm_dma {
+	status = "okay";
 };
