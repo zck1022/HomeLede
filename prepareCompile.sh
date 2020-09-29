@@ -3,8 +3,6 @@
 disablePkgsList="
 ./feeds/lienol/package/chinadns-ng 
 ./feeds/lienol/package/ipt2socks 
-./feeds/lienol/package/v2ray 
-./feeds/lienol/package/v2ray-plugin 
 ./feeds/lienol/others/luci-app-kcptun 
 ./feeds/lienol/lienol/luci-app-ssr-python-pro-server 
 ./package/lean/luci-app-kodexplorer 
@@ -12,6 +10,8 @@ disablePkgsList="
 ./package/lean/luci-app-dockerman 
 ./package/lean/kcptun 
 ./package/lean/luci-theme-argon 
+./package/lean/package/v2ray 
+./package/lean/package/v2ray-plugin 
 ./feeds/packages/net/miniupnpd 
 ./feeds/packages/net/mwan3 
 ./feeds/packages/utils/ttyd 
