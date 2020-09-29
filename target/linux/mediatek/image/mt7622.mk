@@ -28,7 +28,7 @@ define Device/elecom_wrc-2533gent
   DEVICE_DTS := mt7622-elecom-wrc-2533gent
   DEVICE_DTS_DIR := $(DTS_DIR)/mediatek
   DEVICE_PACKAGES := kmod-usb-ohci kmod-usb2 kmod-usb3 kmod-mt7615e \
-	kmod-mt7615-firmware mt7622bt-firmware swconfig
+	kmod-btmtkuart swconfig
 endef
 TARGET_DEVICES += elecom_wrc-2533gent
 
@@ -53,7 +53,7 @@ define Device/mediatek_mt7622-ubi
   IMAGE_SIZE := 32768k
   IMAGES += factory.bin
   IMAGE/factory.bin := append-kernel | pad-to $$(KERNEL_SIZE) | append-ubi | \
-                check-size $$$$(IMAGE_SIZE)
+                check-size
   IMAGE/sysupgrade.bin := sysupgrade-tar
   DEVICE_PACKAGES := kmod-usb-ohci kmod-usb2 kmod-usb3 kmod-ata-ahci-mtk
 endef
