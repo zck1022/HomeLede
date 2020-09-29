@@ -10,8 +10,8 @@ disablePkgsList="
 ./package/lean/luci-app-dockerman 
 ./package/lean/kcptun 
 ./package/lean/luci-theme-argon 
-./package/lean/package/v2ray 
-./package/lean/package/v2ray-plugin 
+./package/lean/v2ray 
+./package/lean/v2ray-plugin 
 ./feeds/packages/net/miniupnpd 
 ./feeds/packages/net/mwan3 
 ./feeds/packages/utils/ttyd 
