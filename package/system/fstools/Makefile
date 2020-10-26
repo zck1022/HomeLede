@@ -12,9 +12,9 @@ PKG_RELEASE:=1
 
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_URL=$(PROJECT_GIT)/project/fstools.git
-PKG_MIRROR_HASH:=7ff4fae22bf518db200f0c4dd73bc32970678e39e3acc6e8dc98b65319c379cd
-PKG_SOURCE_DATE:=2020-06-17
-PKG_SOURCE_VERSION:=d34ea8eb1e12259a315cdef7aa0cd3ceaea68e00
+PKG_MIRROR_HASH:=97cfe9528405d9a21c05fa1638780c27a66bfb6f21becfc3f4fdca1420711db8
+PKG_SOURCE_DATE:=2020-10-16
+PKG_SOURCE_VERSION:=f25ab8a8484215e5fc88c952f25db9a06de311f7
 CMAKE_INSTALL:=1
 
 PKG_LICENSE:=GPL-2.0
@@ -76,10 +76,10 @@ define Package/snapshot-tool
 endef
 
 define Package/block-mount
-	SECTION:=base
-	CATEGORY:=Base system
-	TITLE:=Block device mounting and checking
-	DEPENDS:=+fstools +ubox +libubox +libuci +libblobmsg-json +libjson-c
+  SECTION:=base
+  CATEGORY:=Base system
+  TITLE:=Block device mounting and checking
+  DEPENDS:=+fstools +ubox +libubox +libuci +libblobmsg-json +libjson-c
 endef
 
 define Package/blockd
