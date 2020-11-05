@@ -11,6 +11,7 @@ on:
   push:
     branches: 
       - k5 
+  release:
     types: [published]
 
 jobs:
